@@ -29,9 +29,12 @@ class weburl extends Db_connection
         if ($this->url) {
             $url = $this->url;
             $sql->execute(array('url' => $url));
+            return true;
+        } else {
+            return false;
         }
     }
-    protected function urlChecker($url)
+    public function urlChecker($url)
     {
         // set the temp url
         $this->tempUrl = $url;
@@ -39,24 +42,27 @@ class weburl extends Db_connection
         if ($url = parse_url($this->tempUrl, PHP_URL_SCHEME) && parse_url($this->tempUrl, PHP_URL_HOST)) {
             // set url to temp url
             $this->url = $this->tempUrl;
+            return true;
         } else {
             // if url is invalid make sure that the url doens't get saved to the db
             $this->url = false;
             echo 'please enter a valid url';
+            return false;
         }
     }
     public function saveToDb($url)
     {
 
-        // check if url is valid
+        // // check if url is valid
         $this->urlChecker($url);
         // send if url is true(valid) then send url to db;
         $this->prepareWebsiteToDb();
     }
-    public function readFromDb()
+    public function readFromDb($i)
     {
         $pdo = parent::$pdo;
-        $sql = $pdo->prepare("SELECT `url` FROM `adress`  ORDER BY id DESC LIMIT 1;");
+        sleep(1);
+        $sql = $pdo->prepare("SELECT `url` FROM `adress`  ORDER BY id DESC LIMIT $i;");
         $sql->execute();
         $count = $sql->rowCount();
         $results = $sql->fetchAll();

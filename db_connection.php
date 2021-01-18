@@ -2,9 +2,9 @@
 
 class Db_connection
 {
-    private $host = 'localhost';
-    private $user = 'root';
-    private $pwd = '';
+    private $host = '86.89.171.85:3306';
+    private $user = 'remoteappium';
+    private $pwd = 'Remoteappium';
     private $db = 'appiumwebserver';
     protected $conn;
     protected static $pdo;

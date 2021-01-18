@@ -19,13 +19,16 @@
 require_once 'url.php';
 
 if (isset($_POST['submit'])) {
-    execjava();
     $weburl = $_POST['url'];
     $url = new weburl;
     $url->saveToDb($weburl);
+    if ($url->urlChecker($weburl)) {
+        execjava();
+    };
 }
 
 function execjava()
 {
-    exec('java -cp C:\\xampp\\htdocs\\mobile test muur\\vaadin.main.jar openwebapp.openwebapp');
+
+    exec('java -cp C:\\Users\\maxva\\OneDrive\\Bureaublad\\vaadin\\out\\artifacts\\vaadin_jar\\vaadin.main.jar openwebapp.openwebapp');
 }
