@@ -54,9 +54,9 @@ Code and examples to setup the mobile testwall.
 
 ---
 
-## Usage
+# Usage
 
-# a function for a phone
+### a function for a phone
 
 ```Java
 public static void setUp5() throws Exception {
@@ -72,7 +72,7 @@ public static void setUp5() throws Exception {
     }
 ```
 
-# the main function in the file openwebapp
+## the main function in the file openwebapp
 
 ```Java
     public static void main(String[] args) throws Exception {
