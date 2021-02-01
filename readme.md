@@ -48,23 +48,42 @@ Code and examples to setup the mobile testwall.
   3. open open the android or ios folder for which device your want to add
   4. copy a function and rename it so the file doesn't have duplicate names
   5. open an cmd line and run the command `adb devices` to see what the udid of the new device is
-  6. copy and paste the new udid where the old/ duplicate udid is so the app doesn't try to open a website on the same phone twice
-  7. rebuild the app so the changes will take effect (in the editor intellij you can do this by going to build/build artifacts/rebuild project)
+  6. add the function name in the file `openwebapp` (for example `android.setup5`)
+  7. copy and paste the new udid where the old/ duplicate udid is so the app doesn't try to open a website on the same phone twice
+  8. rebuild the app so the changes will take effect (in the editor intellij you can do this by going to build/build artifacts/rebuild project)
 
 ---
 
 ## Usage
 
+# a function for a phone
+
 ```Java
-public static void setUp1() throws Exception {
+public static void setUp5() throws Exception {
         DesiredCapabilities caps = new DesiredCapabilities();   // create a new instance of the class DesiredCapabilities
         // create capabilities for appium to find the right device and have the correct data to preform an browser search
         caps.setCapability("platformName", "Android");          // set the platform to Android *required
         caps.setCapability("automationName", "UiAutomator2");   // delcare what automation driver the phone is using
         caps.setCapability("browserName", "Chrome");            // delcare which browser you are using a specified phone *required
-        caps.setCapability("udid","emulator-5554");             // delcare the udid to make appium know a difference between the phones *required
+        caps.setCapability("udid","emulator-xxxx");             // delcare the udid to make appium know a difference between the phones *required
         driver = new RemoteWebDriver(new URL(APPIUM), caps);    // create a driver to open the site on each phone
 
         driver.get(WebPage);                                    // run the driver
+    }
+```
+
+# the main function in the file openwebapp
+
+```Java
+    public static void main(String[] args) throws Exception {
+        // initialize and run program
+        android android = new android();    // a call to the class android
+        ios ios = new ios();                // a call to the class ios
+
+        android.setUp1();                   // a call to the function setup1 in the class android
+        android.setUp2();
+        android.setUp3();
+        ios.setUp1();
+
     }
 ```

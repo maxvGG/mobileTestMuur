@@ -17,7 +17,7 @@ public class openwebapp {
         android.setUp1();
         android.setUp2();
         android.setUp3();
-//        ios.setUp1();
+        // ios.setUp1();
 
     }
 }
