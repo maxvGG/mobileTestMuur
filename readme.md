@@ -57,14 +57,14 @@ Code and examples to setup the mobile testwall.
 
 ```Java
 public static void setUp1() throws Exception {
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("platformName", "Android");
-        caps.setCapability("automationName", "UiAutomator2");
-        caps.setCapability("browserName", "Chrome");
-        caps.setCapability("udid","emulator-5554");
-        driver = new RemoteWebDriver(new URL(APPIUM), caps);
+        DesiredCapabilities caps = new DesiredCapabilities();   // create a new instance of the class DesiredCapabilities
+        // create capabilities for appium to find the right device and have the correct data to preform an browser search
+        caps.setCapability("platformName", "Android");          // set the platform to Android *required
+        caps.setCapability("automationName", "UiAutomator2");   // delcare what automation driver the phone is using
+        caps.setCapability("browserName", "Chrome");            // delcare which browser you are using a specified phone *required
+        caps.setCapability("udid","emulator-5554");             // delcare the udid to make appium know a difference between the phones *required
+        driver = new RemoteWebDriver(new URL(APPIUM), caps);    // create a driver to open the site on each phone
 
-        driver.get(WebPage);
+        driver.get(WebPage);                                    // run the driver
     }
-
 ```
