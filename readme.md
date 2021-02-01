@@ -23,7 +23,7 @@ Code and examples to setup the mobile testwall.
 
 ---
 
-## Setup
+## Setup and Installation
 
 - setup appium
 
@@ -52,3 +52,19 @@ Code and examples to setup the mobile testwall.
   7. rebuild the app so the changes will take effect (in the editor intellij you can do this by going to build/build artifacts/rebuild project)
 
 ---
+
+## Usage
+
+```Java
+public static void setUp1() throws Exception {
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("platformName", "Android");
+        caps.setCapability("automationName", "UiAutomator2");
+        caps.setCapability("browserName", "Chrome");
+        caps.setCapability("udid","emulator-5554");
+        driver = new RemoteWebDriver(new URL(APPIUM), caps);
+
+        driver.get(WebPage);
+    }
+
+```
