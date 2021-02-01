@@ -36,10 +36,11 @@ Code and examples to setup the mobile testwall.
 
 - setup the php files
 
-  1. save the files in a local server like xampp or mamp
+  1. save the files in a local server like xamp or mamp
   2. start the local sever
   3. change the variables: `$host`, `$db`, `$user`, `$pwd` and `$db` to your own data
-  4. open `index.php` in your browser
+  4. edit the path in the function `exec` to the java app which should be located in the file directory `out/artifacts/vaadin/` (you need to include the file in the exec() line to make it work)
+  5. open `index.php` in your browser
 
 - add new phones
   1. open the directory vaadin in a editor where u can edit java files
