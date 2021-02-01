@@ -5,3 +5,9 @@
 Code en uitleg voor de mobile testmuur.
 
 ---
+
+## Contributors
+
+- Beau Vroegh & Max van Gorp
+
+--
