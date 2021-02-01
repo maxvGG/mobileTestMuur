@@ -4,20 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
 <body>
-    <form action="index.php" method="POST">
-        <input type="text" name="url" placeholder="https://example.com">
-        <input type="submit" name="submit" value="submit" placeholder="click me!!!">
-    </form>
-    <button><a href='?ea=true'>start server</a></button>
+    <h1 id="title">Mobile Test Muur</h1>
+    <div id="centerbox">
+        <form action="index.php" method="POST">
+            <input type="text" name="url" placeholder="https://example.com">
+            <input type="submit" name="submit" value="submit" placeholder="click me!!!">
+        </form>
+    </div>
+    <footer>
+        Made by Max van Gorp and Beau Vroegh
+        <a id="link" href="https://github.com/maxvGG/mobileTestMuur" target="_blank">souce code</a>
+    </footer>
 </body>
 
 </html>
 <?php
-require_once 'url.php';
+include 'url.php';
 
 if (isset($_POST['submit'])) {
     $weburl = $_POST['url'];

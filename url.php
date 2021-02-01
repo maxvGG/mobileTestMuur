@@ -46,7 +46,8 @@ class weburl extends Db_connection
         } else {
             // if url is invalid make sure that the url doens't get saved to the db
             $this->url = false;
-            echo 'please enter a valid url';
+
+
             return false;
         }
     }
@@ -57,6 +58,9 @@ class weburl extends Db_connection
         $this->urlChecker($url);
         // send if url is true(valid) then send url to db;
         $this->prepareWebsiteToDb();
+        if (!$this->urlChecker($url)) {
+            echo "<p class='error'>" . 'Please enter a valid url' . "</p>";
+        }
     }
     public function readFromDb($i)
     {
