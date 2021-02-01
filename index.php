@@ -27,16 +27,9 @@ if (isset($_POST['submit'])) {
         execjava();
     };
 }
-if (isset($_GET['ea'])) {
-    execappium();
-}
+
 function execjava()
 {
 
     exec('java -cp C:\\Users\\maxva\\OneDrive\\Bureaublad\\vaadin\\out\\artifacts\\vaadin_jar\\vaadin.main.jar openwebapp.openwebapp');
-}
-
-function execappium()
-{
-    exec('appium -p 4444');
 }

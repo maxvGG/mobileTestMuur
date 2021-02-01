@@ -1,6 +1,6 @@
 # java mobile testmuur
 
-**Version 1.0.3**
+**Version 1.0.0**
 
 Code and examples to setup the mobile testwall.
 
@@ -26,6 +26,7 @@ Code and examples to setup the mobile testwall.
 ## Setup
 
 - setup appium
+
   1. open appium
   2. click on edit configurations
   3. open android studio and copy the android sdk to the ANDROID_HOME input
@@ -34,6 +35,7 @@ Code and examples to setup the mobile testwall.
   6. click start server
 
 - setup the php files
+
   1. save the files in a local server like xampp or mamp
   2. start the local sever
   3. change the variables: `$host`, `$db`, `$user`, `$pwd` and `$db` to your own data
