@@ -1,0 +1,20 @@
+group 'io.cloudgrey'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile group: 'com.vaadin', name: 'vaadin', version: '18.0.2'
+    compile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/io.appium/java-client
+    compile group: 'io.appium', name: 'java-client', version: '7.4.1'
+    // https://mvnrepository.com/artifact/com.vaadin/vaadin-server
+    compile group: 'com.vaadin', name: 'vaadin-server', version: '8.12.1'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.141.59'
+}

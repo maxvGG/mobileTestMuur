@@ -12,6 +12,7 @@
         <input type="text" name="url" placeholder="https://example.com">
         <input type="submit" name="submit" value="submit" placeholder="click me!!!">
     </form>
+    <button><a href='?ea=true'>start server</a></button>
 </body>
 
 </html>
@@ -26,9 +27,16 @@ if (isset($_POST['submit'])) {
         execjava();
     };
 }
-
+if (isset($_GET['ea'])) {
+    execappium();
+}
 function execjava()
 {
 
     exec('java -cp C:\\Users\\maxva\\OneDrive\\Bureaublad\\vaadin\\out\\artifacts\\vaadin_jar\\vaadin.main.jar openwebapp.openwebapp');
+}
+
+function execappium()
+{
+    exec('appium -p 4444');
 }
