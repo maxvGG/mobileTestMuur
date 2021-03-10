@@ -14,6 +14,7 @@
         <form action="index.php" method="POST">
             <input type="text" name="url" placeholder="https://example.com">
             <input type="submit" name="submit" value="submit" placeholder="click me!!!">
+            <input type="submit" name="startServer" value="startServer" placeholder="start server" style="margin-top: 10px;">
         </form>
     </div>
     <footer>
@@ -35,6 +36,29 @@ if (isset($_POST['submit'])) {
     };
 }
 
+if (isset($_POST['startServer'])) {
+    echo execInBackground(`echo hello`);
+    // exec('appium -p 4444');
+
+}
+// function execCmd($cmd)
+// {
+//     // $cmd = 'appium -p 4444';
+//     echo "<pre>" .  popen($cmd, "r") . "</pre>";
+// }
+function execInBackground($cmd = null)
+{
+    if (!$cmd) {
+        echo "no cmd given";
+        throw new Exception("No command given");
+    }
+    // If windows, else
+    if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+        system($cmd . " > NUL");
+    } else {
+        shell_exec("/usr/bin/nohup " . $cmd . " >/dev/null 2>&1 &");
+    }
+}
 function execjava()
 {
 
